@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>sl500 tutorial page 6</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#000000" text="#FFFFFF" link="#0033FF">
+<div align="center"> 
+  <table width="700" border="0" cellspacing="5" cellpadding="5" align="center">
+    <tr> 
+      <td colspan="2"> 
+        <p align="center"><font face="Arial, Helvetica, sans-serif" size="1">Tutorial<br>
+          </font><font color="#FFFFFF"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><b><a href="tut_reeves.htm" target="main">'SL500 
+          Texturing and Lighting'</a></b></font></font></font><font face="Arial, Helvetica, sans-serif" size="1"><br>
+          by Simon Reeves</font></p>
+        <p align="center"><font size="1" face="Arial, Helvetica, sans-serif">e-mail 
+          : <a href="mailto:simon@simonreeves.co.uk">simon@simonreeves.co.uk</a></font></p>
+      </td>
+    </tr>
+    <tr align="center"> 
+      <td colspan="2"> 
+        <table width="224" border="0" cellspacing="5" cellpadding="5">
+          <tr> 
+            <td valign="middle" align="left" height="8"> 
+              <div align="center"><font face="Arial, Helvetica, sans-serif" size="1">Textures 
+                From Total Textures CD Collections:v8 'Vehicles'</font></div>
+            </td>
+            <td valign="middle" align="left" height="8"><img src="../graphics/CDCovers_v8.jpg" width="50" height="50"></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table width="700" border="0">
+    <tr> 
+      <td width="892"><div align="center"> 
+          <p><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif">PAGE 
+            <a href="index.htm">1</a> <a href="index02.htm">2</a> <a href="index03.htm">3</a> 
+            <a href="index04.htm">4</a> <a href="index05.htm">5</a> <a href="index06.htm">6</a></font></p>
+          <p><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>RENDERING 
+            AND POST WORK</strong></font></p>
+          <p><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif">for 
+            this scene, I could get away with quite low settings for final gathering 
+            as the scene has quite dirty/messy surfaces, so gi artifacts wont 
+            be very noticeable, the min/max radius controls the size of samples, 
+            [this probably isn't technically correct, that's how I think of it] 
+            so if the gi isn't looking detailed enough this is probably why.<br>
+            For the anti alias settings I used 1,16 which should be plenty, and 
+            the mitchell filter is a bit sharper than the default. Those are the 
+            main settings to worry about for this type of scene in MR so far I 
+            have found.</font></p>
+          <p><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif"><img src="mrsettings01.jpg" width="355" height="513"><img src="mrsettings02.jpg" width="355" height="513"></font></p>
+          <p><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif">Post 
+            work in Photoshop</font></p>
+          <p><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif">I 
+            use this particular technique quite often, and always do a bit of 
+            photoshop work after rendering from max, even if it is just adjusting 
+            brightness/contrast/saturation.</font></p>
+          <p><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif"><img src="post01.jpg" width="800" height="319"></font></p>
+          <p><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif">to 
+            start off with here is the render straight into ps</font></p>
+          <p><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif"><img src="post02.jpg" width="800" height="319"></font></p>
+          <p><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif">Duplicated 
+            the layer, leaving the original one incase it needs starting again 
+            from there. I decided the image wasn't quite sharp enough so I used 
+            the un sharpen mask filter and fiddle with the different sliders until 
+            I was happy.</font></p>
+          <p><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif"><img src="post03.jpg" width="800" height="319"></font></p>
+          <p><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif">Duplicate 
+            that layer, this one is going to be overlayed on top of the base layer 
+            that has been sharpened, I used a maximum filter on it to expand the 
+            highlights a bit.</font></p>
+          <p><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif"><img src="post04.jpg" width="800" height="319"></font></p>
+          <p><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif">then 
+            use the gaussian blur filter, just enough so it is all smoothed out 
+            and there isn't any of the jagged bits from the maximum filter</font></p>
+          <p><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif"><img src="post05.jpg" width="800" height="319"></font></p>
+          <p><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif">next 
+            is changing the layer blending for the top layer, I chose overlay 
+            on this one, although soft light/hard light/lighten are also ones 
+            that I use quite often, then adjust the opacity to whatever looks 
+            best. Its hard to explain what each blending mode does, [although 
+            they are in the manual] playing around with different ones with different 
+            opacity's is the best was to find out.</font></p>
+          <p><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif"><img src="post06.jpg" width="800" height="319"></font></p>
+          <p><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif">For 
+            the last step, add hue/saturation layers for both layers in use. If 
+            you ALT+click in between layers, you can set an adjustment layer to 
+            only effect the one is it attached to, as you see in the image above 
+            how the two hue/sat layers are both inset and have an arrow pointing 
+            to the layer they effect.</font></p>
+          <p align="right"><font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong>.Simon 
+            Reeves july2004</strong></font></p>
+          <p>&nbsp;</p>
+          </div></td>
+    </tr>
+  </table>
+  <table width="700" border="0" cellspacing="5" cellpadding="5">
+    <tr> 
+      <td> 
+        <div align="center"><font size="1" face="Arial, Helvetica, sans-serif"><a href="../tutorials.htm">back 
+          to tutorials</a></font></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
