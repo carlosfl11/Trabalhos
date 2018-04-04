@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 56d2a60b45b9e1b4fa54ad399bc4be91
-timeCreated: 1522327568
+guid: 8e5f8c55111d60a4684670ca5eb8ba83
+timeCreated: 1522853420
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -141,7 +141,7 @@ ModelImporter:
     400130: mixamorig:Spine
     400132: mixamorig:Spine1
     400134: mixamorig:Spine2
-    7400000: douglas@idle
+    7400000: douglas@fightingIdle
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -165,16 +165,16 @@ ModelImporter:
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
-    animationScaleError: 0
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: douglas@idle
+      name: douglas@fightingIdle
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 198
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -182,11 +182,11 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 1
+      loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0

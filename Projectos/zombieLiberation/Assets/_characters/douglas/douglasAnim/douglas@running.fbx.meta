@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 56d2a60b45b9e1b4fa54ad399bc4be91
-timeCreated: 1522327568
+guid: b579f982b4a9fcf4fb3844ca51551aaf
+timeCreated: 1522849778
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -141,7 +141,7 @@ ModelImporter:
     400130: mixamorig:Spine
     400132: mixamorig:Spine1
     400134: mixamorig:Spine2
-    7400000: douglas@idle
+    7400000: douglas@running
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -165,16 +165,16 @@ ModelImporter:
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
-    animationScaleError: 0
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: douglas@idle
+      name: douglas@running
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 240
+      lastFrame: 49
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -186,13 +186,32 @@ ModelImporter:
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 1
+      keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
+      curves:
+      - name: gravityWeight
+        curve:
+          serializedVersion: 2
+          curve:
+          - serializedVersion: 2
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          - serializedVersion: 2
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+          preInfinity: 2
+          postInfinity: 2
+          rotationOrder: 0
       events: []
       transformMask: []
       maskType: 3
