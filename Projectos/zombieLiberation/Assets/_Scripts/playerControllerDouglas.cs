@@ -6,7 +6,7 @@ public class playerControllerDouglas : MonoBehaviour
 {
 
     private Animator playerAnim;
-    private float idleAnim, targetIdle;
+    private float idleAnim, changevalue;
 
     private float animationTimer;
 
@@ -23,13 +23,21 @@ public class playerControllerDouglas : MonoBehaviour
         // idle
         if (!playerAnim.GetBool("isfighting") && !playerAnim.GetBool("isMoving"))
         {
-            if (idleAnim >= targetIdle)
-                
+            if (idleAnim <= 0)
+                changevalue = 0.001f;
+            else if(idleAnim >=1)
+                changevalue = -0.001f;
 
-            idleAnim = Mathf.Lerp(idleAnim, targetIdle, 0.001f);
+            idleAnim += changevalue;
             playerAnim.SetFloat("randIdle", idleAnim);
-            Debug.Log(idleAnim + "," + targetIdle);
         }
+
+        if(Input.GetButtonDown(KeyCode.W))
+        {
+            playerAnim.SetBool("isMoving", true);
+        }
+        else
+            playerAnim.SetBool("isMoving", true);
 
 
 
