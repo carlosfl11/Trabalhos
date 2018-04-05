@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zombieLiberation.Plugins", "zombieLiberation.Plugins.csproj", "{C4121031-8F22-C91A-FEC0-66E8C72A5BDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zombieLiberation", "zombieLiberation.csproj", "{9425C6B8-3109-A173-5081-1E9C5C707D60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{C4121031-8F22-C91A-FEC0-66E8C72A5BDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4121031-8F22-C91A-FEC0-66E8C72A5BDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4121031-8F22-C91A-FEC0-66E8C72A5BDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9425C6B8-3109-A173-5081-1E9C5C707D60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9425C6B8-3109-A173-5081-1E9C5C707D60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9425C6B8-3109-A173-5081-1E9C5C707D60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9425C6B8-3109-A173-5081-1E9C5C707D60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
