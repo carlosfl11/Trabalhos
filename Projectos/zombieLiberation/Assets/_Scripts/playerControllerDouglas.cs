@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class playerControllerDouglas : MonoBehaviour
 {
-
+    public float acelaration, angularVelocity;
     private Animator playerAnim;
     private float idleAnim, changevalue;
 
-    private float animationTimer;
 
     // Use this for initialization
     void Start()
@@ -25,19 +24,36 @@ public class playerControllerDouglas : MonoBehaviour
         {
             if (idleAnim <= 0)
                 changevalue = 0.001f;
-            else if(idleAnim >=1)
+            else if (idleAnim >= 1)
                 changevalue = -0.001f;
 
             idleAnim += changevalue;
             playerAnim.SetFloat("randIdle", idleAnim);
         }
 
-        if(Input.GetButtonDown(KeyCode.W))
+        // move
+        if (Input.GetAxis("Vertical") > 0)
         {
+
             playerAnim.SetBool("isMoving", true);
+            //run
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                if (playerAnim.GetFloat("LocX") < 1.0f)
+                    playerAnim.SetFloat("LocX", playerAnim.GetFloat("LocX") + acelaration * Time.deltaTime);
+            }
+            else if (playerAnim.GetFloat("LocX") > 0.0f)
+                playerAnim.SetFloat("LocX", playerAnim.GetFloat("LocX") - acelaration * Time.deltaTime);
+            
+            // turn while moving
+            if (Input.GetAxis("Horizontal") > 0)
+                transform.Rotate(transform.up, angularVelocity * Time.deltaTime);
+            else if (Input.GetAxis("Horizontal") < 0)
+                transform.Rotate(transform.up, -angularVelocity * Time.deltaTime);
+
         }
         else
-            playerAnim.SetBool("isMoving", true);
+            playerAnim.SetBool("isMoving", false);
 
 
 
