@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/scene/treeTest.unity
-  isLoaded: 1
-  isActive: 1
