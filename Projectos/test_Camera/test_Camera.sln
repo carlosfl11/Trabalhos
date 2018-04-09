@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test_Camera.Plugins", "test_Camera.Plugins.csproj", "{6368E92F-508C-4434-9525-CAE12E74D5B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test_Camera", "test_Camera.csproj", "{4943028A-3204-F00E-A8BB-06B69C2184A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6368E92F-508C-4434-9525-CAE12E74D5B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6368E92F-508C-4434-9525-CAE12E74D5B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6368E92F-508C-4434-9525-CAE12E74D5B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6368E92F-508C-4434-9525-CAE12E74D5B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4943028A-3204-F00E-A8BB-06B69C2184A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4943028A-3204-F00E-A8BB-06B69C2184A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4943028A-3204-F00E-A8BB-06B69C2184A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4943028A-3204-F00E-A8BB-06B69C2184A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
