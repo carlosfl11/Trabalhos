@@ -4,19 +4,34 @@ using UnityEngine;
 
 public class playerControllerDouglas : MonoBehaviour
 {
+    //Rotation
     public float acelaration, angularVelocity;
-
     private float actualAVel;
+
+    //Animation
     private Animator playerAnim;
     private float idleAnim, changevalue;
+
+    //Camera
+    public float CameraHeight, CameraDistance, CameraVelocity;
+    private Transform mainCamera, cameraTarget;
+    private Vector3 cameraPositionTarget;
 
 
     // Use this for initialization
     void Start()
     {
         //animator
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        cameraTarget = GameObject.Find("CameraTarget").transform;
+
         playerAnim = GetComponent<Animator>();
         actualAVel = angularVelocity;
+
+        //Camera
+        cameraPositionTarget = transform.position - (transform.forward * CameraDistance) + (transform.up * CameraHeight);
+
+        mainCamera.LookAt(cameraTarget);
 
     }
 
@@ -64,7 +79,17 @@ public class playerControllerDouglas : MonoBehaviour
         else
             playerAnim.SetBool("isMoving", false);
 
+        //CameraPosition
+        cameraPositionTarget = transform.position - (transform.forward * CameraDistance) + (transform.up * CameraHeight);
+
+        mainCamera.position = cameraPositionTarget;
+        mainCamera.LookAt(cameraTarget);
 
 
     }
+
+    //private Vector3 calculatecameraPos()
+    //{
+
+    //}
 }
