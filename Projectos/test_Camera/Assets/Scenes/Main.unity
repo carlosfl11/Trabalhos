@@ -3885,7 +3885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationVel: 0.1
-  animationAcel: 0.2
+  animationAcel: 0.1
   CameraHeight: 4
   CameraDistance: 6
   CameraVelocity: 0
