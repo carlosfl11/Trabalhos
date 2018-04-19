@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class playerControllerDouglas : MonoBehaviour
 {
-    public float animationVel,animationAcel ;
+    //Rotation
+    public float acelaration, angularVelocity;
+    private float actualAVel;
 
     //Animation
     private Animator playerAnim;
     private float idleAnim, changevalue;
-    private float LocX, LocY;
 
     //Camera
     public float CameraHeight, CameraDistance, CameraVelocity;
@@ -25,6 +26,7 @@ public class playerControllerDouglas : MonoBehaviour
         cameraTarget = GameObject.Find("CameraTarget").transform;
 
         playerAnim = GetComponent<Animator>();
+        actualAVel = angularVelocity;
 
         //Camera
         cameraPositionTarget = transform.position - (transform.forward * CameraDistance) + (transform.up * CameraHeight);
@@ -36,7 +38,7 @@ public class playerControllerDouglas : MonoBehaviour
     void Update()
     {
         // idle
-        if (!playerAnim.GetBool("isMoving"))
+        if (!playerAnim.GetBool("isfighting") && !playerAnim.GetBool("isMoving"))
         {
             if (idleAnim <= 0)
                 changevalue = 0.001f;
@@ -48,7 +50,34 @@ public class playerControllerDouglas : MonoBehaviour
         }
 
         // move
-        Movement();
+        if (Input.GetAxis("Vertical") > 0)
+        {
+            //walking forward
+            playerAnim.SetBool("isMoving", true);
+            // turn faster when wallking
+            actualAVel = angularVelocity * 2;
+
+            //run
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                // turn velocity return to base value
+                actualAVel = angularVelocity;
+                // blend transition to running
+                if (playerAnim.GetFloat("LocX") < 1.0f)
+                    playerAnim.SetFloat("LocX", playerAnim.GetFloat("LocX") + acelaration * Time.deltaTime);
+            }
+            else if (playerAnim.GetFloat("LocX") > 0.0f)
+                playerAnim.SetFloat("LocX", playerAnim.GetFloat("LocX") - acelaration * Time.deltaTime);
+
+            // turn while moving
+            if (Input.GetAxis("Horizontal") > 0)
+                transform.Rotate(transform.up, actualAVel * Time.deltaTime);
+            else if (Input.GetAxis("Horizontal") < 0)
+                transform.Rotate(transform.up, -actualAVel * Time.deltaTime);
+
+        }
+        else
+            playerAnim.SetBool("isMoving", false);
 
         //CameraPosition
         cameraPositionTarget = transform.position - (transform.forward * CameraDistance) + (transform.up * CameraHeight);
@@ -57,63 +86,6 @@ public class playerControllerDouglas : MonoBehaviour
         mainCamera.LookAt(cameraTarget);
 
 
-    }
-
-    private void Movement()
-    {
-        if (Input.GetAxis("Vertical") > 0)
-        {
-            //moving
-            playerAnim.SetBool("isMoving", true);
-
-            // blendTree smooth
-            //walk
-            if (Input.GetAxis("Horizontal") > 0)
-            {
-                if (LocX < 1.0f)
-                    LocX += animationVel;
-                else
-                    LocX = 1.0f;
-            }
-            else if (Input.GetAxis("Horizontal") < 0)
-            {
-                if (LocX > -1.0f)
-                    LocX -= animationVel;
-                else
-                    LocX = -1.0f;
-            }
-            else
-            {
-                if (LocX > animationVel)
-                    LocX -= animationVel;
-                else if (LocX < 0.0f)
-                    LocX += animationVel;
-                else if (LocX - animationVel < 0.0f || LocX + animationVel > 0.0f)
-                    LocX = 0.0f;
-            }
-
-            //running
-
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                if (LocY < 1.0f)
-                    LocY += animationAcel;
-                else
-                    LocY = 1.0f;
-            }
-            else
-            {
-                if (LocY - animationAcel > 0.0f)
-                    LocY -= animationAcel;
-                else
-                    LocY = 0.0f;
-            }
-            playerAnim.SetFloat("LocY", LocY);
-            playerAnim.SetFloat("LocX", LocX);
-        }
-        else
-            //not Moving
-            playerAnim.SetBool("isMoving", false);
     }
 
     //private Vector3 calculatecameraPos()
