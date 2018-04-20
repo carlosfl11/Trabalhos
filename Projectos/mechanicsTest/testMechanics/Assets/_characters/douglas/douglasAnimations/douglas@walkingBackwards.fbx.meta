@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 88e04653e54b6304da7b823cdb48bce5
-timeCreated: 1524144997
+guid: 575ed11c9e3e5a54db4c6db58248b43f
+timeCreated: 1524180004
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -141,7 +141,7 @@ ModelImporter:
     400130: mixamorig:Spine
     400132: mixamorig:Spine1
     400134: mixamorig:Spine2
-    7400000: douglas@dizzyIdle
+    7400000: douglas@walkingBackwards
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -171,10 +171,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: douglas@dizzyIdle
+      name: douglas@walkingBackwards
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 256
+      lastFrame: 72
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -185,7 +185,7 @@ ModelImporter:
       loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
