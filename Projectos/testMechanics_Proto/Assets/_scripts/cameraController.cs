@@ -5,17 +5,21 @@ using UnityEngine;
 public class cameraController : MonoBehaviour
 {
 
-
+    //pref
     public GameObject objToFollow;
     public float camDistance, maxCamDistanceFromObj = 0.2f, camMoveVel = 0.05f;
+    public float anglePerSec = 5.0f;
 
+    // target, 
     private Transform camTarget;
     private Vector3 camPositionVec;
     private Camera mainCam;
 
+    // side
     public bool sideLeft = true;
     private Vector3 currentCamTargetPos;
     private float currentCamTargetX;
+    
 
     // Use this for initialization
     void Start()
@@ -50,11 +54,21 @@ public class cameraController : MonoBehaviour
 
         // update the vector that puts the cam on position
         camPositionVec = -objToFollow.transform.forward * camDistance;
-        //!!Remake
+        // test the angle between old camPostion and the target one, smooth transition
+        if (Vector3.Angle(camPositionVec, -mainCam.transform.forward) > 0.5f)
+        {
+            // using croos and dot funcition can identify if new target is on the left or right
+            if (Vector3.Dot(Vector3.Cross(-mainCam.transform.forward, camPositionVec), Vector3.up) < 0.0f)
+                camPositionVec = Quaternion.AngleAxis(-anglePerSec * Time.deltaTime, mainCam.transform.up) * camPositionVec;
+            else if (Vector3.Dot(Vector3.Cross(-mainCam.transform.forward, camPositionVec), Vector3.up) > 0.0f)
+                camPositionVec = Quaternion.AngleAxis(anglePerSec * Time.deltaTime, mainCam.transform.up) * camPositionVec;
+        }
+        
+        // update set the new position and lookAt for the cam
         mainCam.transform.position = camTarget.position + camPositionVec;
-        // update lookAt for the cam
         mainCam.transform.LookAt(camTarget);
     }
+   
 
     private void camSide()
     {
