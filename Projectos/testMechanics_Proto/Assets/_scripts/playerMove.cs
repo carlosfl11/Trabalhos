@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class playerMove : MonoBehaviour
 {
-
     public float animAcelaration = 0.04f;
     public float angularVel = 10.0f;
 
@@ -80,14 +79,23 @@ public class playerMove : MonoBehaviour
         playerAnim.SetFloat("LocSpeed", locSpeed);
 
         if (locSpeed == 0.5f && playerAnim.GetBool("moving"))
+        {
             if (Input.GetAxis("Horizontal") > 0)
-                this.transform.Rotate(this.transform.up, angularVel);
+                this.transform.Rotate(this.transform.up, angularVel * Time.deltaTime);
             else if (Input.GetAxis("Horizontal") < 0)
-                this.transform.Rotate(this.transform.up, -angularVel);
+                this.transform.Rotate(this.transform.up, -angularVel * Time.deltaTime);
+        }
+        else if(locSpeed > 0.5f)
+        {
+            if (Input.GetAxis("Horizontal") > 0)
+                this.transform.Rotate(this.transform.up, angularVel * Time.deltaTime * 0.8f);
+            else if (Input.GetAxis("Horizontal") < 0)
+                this.transform.Rotate(this.transform.up, -angularVel * Time.deltaTime * 0.8f);
 
-
+        }
+        //Jump
         if (cc.isGrounded && Input.GetKeyDown(KeyCode.Space)) { }
-            
+
     }
 
 }

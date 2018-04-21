@@ -14,14 +14,14 @@ public class cameraController : MonoBehaviour
     private Transform camTarget;
     private Vector3 camPositionVec;
     private Camera mainCam;
+    private Vector3 targetRotationVec;
 
     // side
     public bool sideLeft = true;
     private Vector3 currentCamTargetPos;
     private float currentCamTargetX;
-    
 
-    // Use this for initialization
+
     void Start()
     {
         // define currente x on camera target
@@ -53,22 +53,35 @@ public class cameraController : MonoBehaviour
         camSide();
 
         // update the vector that puts the cam on position
-        camPositionVec = -objToFollow.transform.forward * camDistance;
+        targetRotationVec = -objToFollow.transform.forward * camDistance;
         // test the angle between old camPostion and the target one, smooth transition
-        if (Vector3.Angle(camPositionVec, -mainCam.transform.forward) > 0.5f)
+        if (Vector3.Angle(targetRotationVec, -mainCam.transform.forward) > 0.5f &&
+            Vector3.Angle(targetRotationVec, -mainCam.transform.forward) <= 30.0f)
         {
-            // using croos and dot funcition can identify if new target is on the left or right
-            if (Vector3.Dot(Vector3.Cross(-mainCam.transform.forward, camPositionVec), Vector3.up) < 0.0f)
+            // using croos funcition can identify if new target is on the left or right
+            if (Vector3.Cross(targetRotationVec, -mainCam.transform.forward).y > 0.0f)
                 camPositionVec = Quaternion.AngleAxis(-anglePerSec * Time.deltaTime, mainCam.transform.up) * camPositionVec;
-            else if (Vector3.Dot(Vector3.Cross(-mainCam.transform.forward, camPositionVec), Vector3.up) > 0.0f)
+            else if (Vector3.Cross(targetRotationVec, -mainCam.transform.forward).y < 0.0f)
                 camPositionVec = Quaternion.AngleAxis(anglePerSec * Time.deltaTime, mainCam.transform.up) * camPositionVec;
         }
-        
+        //limit max angle offset to 30º
+        else if (Vector3.Angle(targetRotationVec, -mainCam.transform.forward) > 30.0f)
+        {
+            if (Vector3.Cross(targetRotationVec, -mainCam.transform.forward).y > 0.0f)
+                camPositionVec = Quaternion.AngleAxis(29.0f, mainCam.transform.up) * targetRotationVec;
+            else if (Vector3.Cross(targetRotationVec, -mainCam.transform.forward).y < 0.0f)
+                camPositionVec = Quaternion.AngleAxis(-29.0f, mainCam.transform.up) * targetRotationVec;
+        }
+
+
         // update set the new position and lookAt for the cam
         mainCam.transform.position = camTarget.position + camPositionVec;
         mainCam.transform.LookAt(camTarget);
+
+        //Debug
+        camDebug();
     }
-   
+
 
     private void camSide()
     {
@@ -95,8 +108,30 @@ public class cameraController : MonoBehaviour
             else
                 currentCamTargetX += camMoveVel * Time.deltaTime;
         }
-
+        //updete camera target x position
         currentCamTargetPos.x = currentCamTargetX;
         camTarget.localPosition = currentCamTargetPos;
+    }
+
+    //camera rotation debug
+    private void camDebug()
+    {
+        Debug.DrawRay(objToFollow.transform.position, -objToFollow.transform.forward, Color.red);
+        Debug.DrawRay(objToFollow.transform.position, camPositionVec, Color.green);
+
+    }
+
+    // camera collision
+    private void OnCollisionEnter(Collision coll)
+    {
+        Vector3 farPoint = coll.contacts[0].point;
+        foreach (ContactPoint p in coll.contacts)
+        {
+            if (Vector3.Distance(mainCam.transform.position, farPoint) <
+                Vector3.Distance(mainCam.transform.position, p.point))
+                farPoint = p.point;
+        }
+        Debug.Log(farPoint);
+        Debug.DrawRay(farPoint, Vector3.up, Color.blue, 5.0f);
     }
 }
