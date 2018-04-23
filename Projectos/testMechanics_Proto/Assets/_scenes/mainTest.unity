@@ -594,6 +594,7 @@ GameObject:
   - component: {fileID: 597542926}
   - component: {fileID: 597542925}
   - component: {fileID: 597542924}
+  - component: {fileID: 597542928}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -665,6 +666,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &597542928
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 597542923}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 57d5f76fab540eb4c8cb76ed03c1b2d5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &755711290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,6 +1081,7 @@ MonoBehaviour:
   maxCamDistanceFromObj: 0.5
   camMoveVel: 6
   anglePerSec: 50
+  RunDistanceMulti: 0.5
   sideLeft: 1
 --- !u!4 &1724083273
 Transform:
