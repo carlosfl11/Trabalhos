@@ -85,13 +85,20 @@ public class playerMove : MonoBehaviour
             else if (Input.GetAxis("Horizontal") < 0)
                 this.transform.Rotate(this.transform.up, -angularVel * Time.deltaTime);
         }
-        else if(locSpeed > 0.5f)
+        else if(locSpeed > 0.5f && playerAnim.GetBool("moving"))
         {
             if (Input.GetAxis("Horizontal") > 0)
                 this.transform.Rotate(this.transform.up, angularVel * Time.deltaTime * 0.8f);
             else if (Input.GetAxis("Horizontal") < 0)
                 this.transform.Rotate(this.transform.up, -angularVel * Time.deltaTime * 0.8f);
-
+        }
+        //moving back
+        else if(locSpeed < 0.5f && playerAnim.GetBool("moving"))
+        {
+            if (Input.GetAxis("Horizontal") > 0)
+                this.transform.Rotate(this.transform.up, angularVel * Time.deltaTime);
+            else if (Input.GetAxis("Horizontal") < 0)
+                this.transform.Rotate(this.transform.up, -angularVel * Time.deltaTime);
         }
         //Jump
         if (cc.isGrounded && Input.GetKeyDown(KeyCode.Space)) { }

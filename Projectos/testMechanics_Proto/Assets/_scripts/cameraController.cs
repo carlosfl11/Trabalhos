@@ -26,6 +26,10 @@ public class cameraController : MonoBehaviour
     private Vector3 currentCamTargetPos;
     private float currentCamTargetX;
 
+    //collision
+    private bool isColliding = false;
+    private Collision coll;
+
 
     void Start()
     {
@@ -134,12 +138,13 @@ public class cameraController : MonoBehaviour
         // in and out on moving fast
         if (objToFollowAnim.GetFloat("LocSpeed") >= 0.75f)
         {
+            //if camera distance is less than running offset
             if (onRunCurrentDistance < camDistance * RunDistanceMulti)
                 onRunCurrentDistance += camMoveVel * 0.5f * Time.deltaTime;
             else
                 onRunCurrentDistance = camDistance * RunDistanceMulti;
         }
-        else
+        else // not running camera ajust
         {
             if (onRunCurrentDistance > 0.0f)
                 onRunCurrentDistance -= camMoveVel * 0.5f * Time.deltaTime;
@@ -150,20 +155,37 @@ public class cameraController : MonoBehaviour
 
         //set camPositionVec distance to camDistance
         camPositionVec = camPositionVec.normalized * (camDistance + onRunCurrentDistance);
-
+        camCollision();
     }
 
     // camera collision
-    private void OnCollisionEnter(Collision coll)
+    private void camCollision()
     {
-        Vector3 farPoint = coll.contacts[0].point;
-        foreach (ContactPoint p in coll.contacts)
+        if (isColliding)
         {
-            if (Vector3.Distance(mainCam.transform.position, farPoint) <
-                Vector3.Distance(mainCam.transform.position, p.point))
-                farPoint = p.point;
+            
         }
-        Debug.Log(farPoint);
-        Debug.DrawRay(farPoint, Vector3.up, Color.blue, 5.0f);
+    }
+
+
+    private void OnCollisionStay(Collision collision)
+    {
+        isColliding = true;
+        coll = collision;
+        Debug.DrawRay(coll.contacts[0].point, Vector3.up, Color.blue);
+
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        isColliding = true;
+        coll = collision;
+        Debug.DrawRay(coll.contacts[0].point, Vector3.up, Color.blue);
+
+
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        isColliding = false;
+        coll = null;
     }
 }
