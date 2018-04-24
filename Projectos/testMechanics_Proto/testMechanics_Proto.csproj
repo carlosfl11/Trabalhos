@@ -301,6 +301,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_scripts\cameraController.cs" />
+    <Compile Include="Assets\_scripts\gameCharCtrl.cs" />
     <Compile Include="Assets\_scripts\playerMove.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
