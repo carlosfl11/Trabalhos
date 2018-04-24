@@ -85,7 +85,7 @@ public class playerMove : MonoBehaviour
             else if (Input.GetAxis("Horizontal") < 0)
                 this.transform.Rotate(this.transform.up, -angularVel * Time.deltaTime);
         }
-        else if(locSpeed > 0.5f && playerAnim.GetBool("moving"))
+        else if (locSpeed > 0.5f && playerAnim.GetBool("moving"))
         {
             if (Input.GetAxis("Horizontal") > 0)
                 this.transform.Rotate(this.transform.up, angularVel * Time.deltaTime * 0.8f);
@@ -93,13 +93,20 @@ public class playerMove : MonoBehaviour
                 this.transform.Rotate(this.transform.up, -angularVel * Time.deltaTime * 0.8f);
         }
         //moving back
-        else if(locSpeed < 0.5f && playerAnim.GetBool("moving"))
+        else if (locSpeed < 0.5f && playerAnim.GetBool("moving"))
         {
             if (Input.GetAxis("Horizontal") > 0)
                 this.transform.Rotate(this.transform.up, angularVel * Time.deltaTime);
             else if (Input.GetAxis("Horizontal") < 0)
                 this.transform.Rotate(this.transform.up, -angularVel * Time.deltaTime);
         }
+
+        //turn stoped
+        if (!playerAnim.GetBool("moving") && Input.GetAxis("Horizontal") != 0)
+            playerAnim.SetFloat("turn", Input.GetAxis("Horizontal"));
+        else
+            playerAnim.SetFloat("turn", 0.0f);
+
         //Jump
         if (cc.isGrounded && Input.GetKeyDown(KeyCode.Space)) { }
 
