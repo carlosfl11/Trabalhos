@@ -29,9 +29,12 @@ public class cameraController : MonoBehaviour
     private float currentCamTargetX;
 
     //collision
-    private bool iscolliding = false;
-    private Vector3 leftViewPortPos, leftViewPortDir;
-    private Vector3 rightViewPortPos, rightViewPortDir;
+    private Vector3 leftBViewPortPos;
+    private Vector3 rightBViewPortPos;
+    private Vector3 leftTViewPortPos;
+    private Vector3 rightTViewPortPos;
+    private bool colliding = false;
+    int whileCount = 0;
 
     void Start()
     {
@@ -65,13 +68,9 @@ public class cameraController : MonoBehaviour
         camSide();
         //smoth ajust camPosition
         camAjust();
+        // test if collides
+        //camColl();
 
-        // update set the new position and lookAt for the cam
-        mainCam.transform.position = camTarget.position + camPositionVec;
-
-        camColl();
-
-        mainCam.transform.LookAt(camTarget);
 
         //Debug
         camDebug();
@@ -88,7 +87,7 @@ public class cameraController : MonoBehaviour
 
         // move cam to the left shoulder
         //on the left side
-        if (sideLeft)
+        if (sideLeft && whileCount == 0)
         {
             if (currentCamTargetX - camMoveVel * Time.deltaTime < -maxCamDistanceFromObj)
                 currentCamTargetX = -maxCamDistanceFromObj;
@@ -96,7 +95,7 @@ public class cameraController : MonoBehaviour
                 currentCamTargetX -= camMoveVel * Time.deltaTime;
         }
         //on the right side
-        else if (!sideLeft)
+        else if (!sideLeft && whileCount == 0)
         {
             if (currentCamTargetX + camMoveVel * Time.deltaTime > maxCamDistanceFromObj)
                 currentCamTargetX = maxCamDistanceFromObj;
@@ -114,6 +113,7 @@ public class cameraController : MonoBehaviour
     {
         // update the vector that puts the cam on position
         targetRotationVec = -objToFollow.transform.forward * camDistance;
+
 
         // test the angle between old camPostion and the target one, smooth transition
         if (Vector3.Angle(targetRotationVec, -mainCam.transform.forward) > 0.5f &&
@@ -159,32 +159,65 @@ public class cameraController : MonoBehaviour
         distance = Mathf.Clamp(camDistance + onRunCurrentDistance, minDistance, maxDistance);
         camPositionVec = camPositionVec.normalized * distance;
 
+        // update set the new position 
+        mainCam.transform.position = camTarget.position + camPositionVec;
+        //define the lookatTarget
+        mainCam.transform.LookAt(camTarget);
+
+
     }
 
     private void camColl()
     {
         LayerMask mask = ~(1 << 8);
+        bool cliping = true;
         RaycastHit hit;
-        // left direction and position to the viewport
-        leftViewPortPos = mainCam.ViewportToWorldPoint(new Vector3(0.0f, 0.5f, mainCam.nearClipPlane));
-        leftViewPortDir = (leftViewPortPos - mainCam.transform.position) * 2.0f;
-        // right direction and position to the viewport
-        rightViewPortPos = mainCam.ViewportToWorldPoint(new Vector3(1.0f, 0.5f, mainCam.nearClipPlane));
-        rightViewPortDir = (rightViewPortPos - mainCam.transform.position) * 2.0f;
 
-        //in front of camera
+
         if (Physics.Linecast(camTarget.position, mainCam.transform.position, out hit, mask))
         {
-            iscolliding = true;
-
-        }
-        else if (Physics.Linecast(leftViewPortPos, leftViewPortPos + leftViewPortDir, out hit, mask))
-        {
-            iscolliding = true;
+            colliding = true;
+            mainCam.transform.position = hit.point;
         }
         else
-            iscolliding = false;
+            colliding = false;
 
+        while (cliping)
+        {
+
+            // left direction and position to the viewport
+            //bottom
+            leftBViewPortPos = mainCam.ViewportToWorldPoint(new Vector3(0.0f, 0.0f, mainCam.nearClipPlane));
+            //top
+            leftTViewPortPos = mainCam.ViewportToWorldPoint(new Vector3(0.0f, 1.0f, mainCam.nearClipPlane));
+
+            // right direction and position to the viewport
+            //bottom
+            rightBViewPortPos = mainCam.ViewportToWorldPoint(new Vector3(1.0f, 0.0f, mainCam.nearClipPlane));
+            //top
+            rightTViewPortPos = mainCam.ViewportToWorldPoint(new Vector3(1.0f, 1.0f, mainCam.nearClipPlane));
+
+            //collision
+            Debug.DrawLine(mainCam.transform.position, leftBViewPortPos, Color.blue);   //leftB
+            Debug.DrawLine(mainCam.transform.position, rightBViewPortPos, Color.blue);   //rightB
+            Debug.DrawLine(mainCam.transform.position, leftTViewPortPos, Color.blue);    //leftT
+            Debug.DrawLine(mainCam.transform.position, rightTViewPortPos, Color.blue);   //rightT
+
+            if (Physics.Linecast(mainCam.transform.position, leftBViewPortPos) || Physics.Linecast(mainCam.transform.position, rightBViewPortPos) ||
+                Physics.Linecast(mainCam.transform.position, leftTViewPortPos) || Physics.Linecast(mainCam.transform.position, rightTViewPortPos))
+            {
+                mainCam.transform.position += mainCam.transform.forward * (mainCam.nearClipPlane +  0.2f);
+                whileCount++;
+                if (whileCount > 1)
+                    camTarget.localPosition = new Vector3(0.0f, camTarget.localPosition.y, camTarget.localPosition.z);
+            }
+            else
+            {
+                cliping = false;
+                mainCam.transform.LookAt(camTarget);
+                whileCount = 0;
+            }
+        }
     }
 
     //camera rotation debug
@@ -194,9 +227,6 @@ public class cameraController : MonoBehaviour
         Debug.DrawRay(objToFollow.transform.position, -objToFollow.transform.forward, Color.red);
         Debug.DrawRay(objToFollow.transform.position, camPositionVec, Color.green);
 
-        //collision
-        Debug.DrawLine(leftViewPortPos, leftViewPortPos + leftViewPortDir, Color.blue);   //left
-        Debug.DrawLine(rightViewPortPos, rightViewPortPos + rightViewPortDir, Color.blue);   //right
-        Debug.DrawLine(camTarget.position, mainCam.transform.position, Color.red);  //back
+
     }
 }
