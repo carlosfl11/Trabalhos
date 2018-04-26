@@ -9,18 +9,32 @@ public class cameraController : MonoBehaviour
     public GameObject objToFollow;
     public float camDistance, maxCamDistanceFromObj = 0.2f, camMoveVel = 0.05f;
     public float anglePerSec = 5.0f;
+    public float RunDistanceMulti = 1.1f;
+    public float minDistance = 1.0f, maxDistance = 10.0f;
 
-    // target, 
+    // on run
+    private Animator objToFollowAnim;
+    private float onRunCurrentDistance = 0.0f;
+
+    // target
     private Transform camTarget;
     private Vector3 camPositionVec;
     private Camera mainCam;
     private Vector3 targetRotationVec;
+    private float distance;
 
     // side
     public bool sideLeft = true;
     private Vector3 currentCamTargetPos;
     private float currentCamTargetX;
 
+    //collision
+    private Vector3 leftBViewPortPos;
+    private Vector3 rightBViewPortPos;
+    private Vector3 leftTViewPortPos;
+    private Vector3 rightTViewPortPos;
+    private bool colliding = false;
+    int whileCount = 0;
 
     void Start()
     {
@@ -39,11 +53,12 @@ public class cameraController : MonoBehaviour
         // calculate the vector that puts the cam on position
         camPositionVec = -objToFollow.transform.forward * camDistance;
 
+        //get animator from target
+        objToFollowAnim = objToFollow.GetComponent<Animator>();
 
         // set position and lookAt for the cam
         mainCam.transform.position = camTarget.position + camPositionVec;
         mainCam.transform.LookAt(camTarget);
-
     }
 
     // Update is called once per frame
@@ -51,32 +66,11 @@ public class cameraController : MonoBehaviour
     {
         //target position function
         camSide();
+        //smoth ajust camPosition
+        camAjust();
+        // test if collides
+        camColl();
 
-        // update the vector that puts the cam on position
-        targetRotationVec = -objToFollow.transform.forward * camDistance;
-        // test the angle between old camPostion and the target one, smooth transition
-        if (Vector3.Angle(targetRotationVec, -mainCam.transform.forward) > 0.5f &&
-            Vector3.Angle(targetRotationVec, -mainCam.transform.forward) <= 30.0f)
-        {
-            // using croos funcition can identify if new target is on the left or right
-            if (Vector3.Cross(targetRotationVec, -mainCam.transform.forward).y > 0.0f)
-                camPositionVec = Quaternion.AngleAxis(-anglePerSec * Time.deltaTime, mainCam.transform.up) * camPositionVec;
-            else if (Vector3.Cross(targetRotationVec, -mainCam.transform.forward).y < 0.0f)
-                camPositionVec = Quaternion.AngleAxis(anglePerSec * Time.deltaTime, mainCam.transform.up) * camPositionVec;
-        }
-        //limit max angle offset to 30º
-        else if (Vector3.Angle(targetRotationVec, -mainCam.transform.forward) > 30.0f)
-        {
-            if (Vector3.Cross(targetRotationVec, -mainCam.transform.forward).y > 0.0f)
-                camPositionVec = Quaternion.AngleAxis(29.0f, mainCam.transform.up) * targetRotationVec;
-            else if (Vector3.Cross(targetRotationVec, -mainCam.transform.forward).y < 0.0f)
-                camPositionVec = Quaternion.AngleAxis(-29.0f, mainCam.transform.up) * targetRotationVec;
-        }
-
-
-        // update set the new position and lookAt for the cam
-        mainCam.transform.position = camTarget.position + camPositionVec;
-        mainCam.transform.LookAt(camTarget);
 
         //Debug
         camDebug();
@@ -93,7 +87,7 @@ public class cameraController : MonoBehaviour
 
         // move cam to the left shoulder
         //on the left side
-        if (sideLeft)
+        if (sideLeft && whileCount == 0)
         {
             if (currentCamTargetX - camMoveVel * Time.deltaTime < -maxCamDistanceFromObj)
                 currentCamTargetX = -maxCamDistanceFromObj;
@@ -101,7 +95,7 @@ public class cameraController : MonoBehaviour
                 currentCamTargetX -= camMoveVel * Time.deltaTime;
         }
         //on the right side
-        else if (!sideLeft)
+        else if (!sideLeft && whileCount == 0)
         {
             if (currentCamTargetX + camMoveVel * Time.deltaTime > maxCamDistanceFromObj)
                 currentCamTargetX = maxCamDistanceFromObj;
@@ -113,25 +107,126 @@ public class cameraController : MonoBehaviour
         camTarget.localPosition = currentCamTargetPos;
     }
 
-    //camera rotation debug
-    private void camDebug()
+
+
+    private void camAjust()
     {
-        Debug.DrawRay(objToFollow.transform.position, -objToFollow.transform.forward, Color.red);
-        Debug.DrawRay(objToFollow.transform.position, camPositionVec, Color.green);
+        // update the vector that puts the cam on position
+        targetRotationVec = -objToFollow.transform.forward * camDistance;
+
+
+        // test the angle between old camPostion and the target one, smooth transition
+        if (Vector3.Angle(targetRotationVec, -mainCam.transform.forward) > 0.5f &&
+            Vector3.Angle(targetRotationVec, -mainCam.transform.forward) <= 30.0f)
+        {
+            //if camera need to rotate right
+            if (Vector3.Cross(targetRotationVec, -mainCam.transform.forward).y > 0.0f)
+                camPositionVec = Quaternion.AngleAxis(-anglePerSec * Time.deltaTime, mainCam.transform.up) * camPositionVec;
+            //if camera need to rotate left
+            else if (Vector3.Cross(targetRotationVec, -mainCam.transform.forward).y < 0.0f)
+                camPositionVec = Quaternion.AngleAxis(anglePerSec * Time.deltaTime, mainCam.transform.up) * camPositionVec;
+
+        }
+
+        //limit max angle offset to 30º
+        if (Vector3.Angle(targetRotationVec, -mainCam.transform.forward) > 30.0f)
+        {
+            if (Vector3.Cross(targetRotationVec, -mainCam.transform.forward).y > 0.0f)
+                camPositionVec = Quaternion.AngleAxis(29.0f, mainCam.transform.up) * targetRotationVec;
+            else if (Vector3.Cross(targetRotationVec, -mainCam.transform.forward).y < 0.0f)
+                camPositionVec = Quaternion.AngleAxis(-29.0f, mainCam.transform.up) * targetRotationVec;
+        }
+
+        // in and out on moving fast
+        if (objToFollowAnim.GetFloat("LocSpeed") >= 0.75f)
+        {
+            //if camera distance is less than running offset
+            if (onRunCurrentDistance < camDistance * RunDistanceMulti)
+                onRunCurrentDistance += camMoveVel * 0.2f * Time.deltaTime;
+            else
+                onRunCurrentDistance = camDistance * RunDistanceMulti;
+        }
+        else // not running camera ajust
+        {
+            if (onRunCurrentDistance > 0.0f)
+                onRunCurrentDistance -= camMoveVel * 0.2f * Time.deltaTime;
+            else
+                onRunCurrentDistance = 0.0f;
+        }
+
+
+        //set camPositionVec distance to camDistance
+        distance = Mathf.Clamp(camDistance + onRunCurrentDistance, minDistance, maxDistance);
+        camPositionVec = camPositionVec.normalized * distance;
+
+        // update set the new position 
+        mainCam.transform.position = camTarget.position + camPositionVec;
+        //define the lookatTarget
+        mainCam.transform.LookAt(camTarget);
+
 
     }
 
-    // camera collision
-    private void OnCollisionEnter(Collision coll)
+    private void camColl()
     {
-        Vector3 farPoint = coll.contacts[0].point;
-        foreach (ContactPoint p in coll.contacts)
+        LayerMask mask = ~(1 << 8);
+        bool cliping = true;
+        RaycastHit hit;
+
+
+        if (Physics.Linecast(camTarget.position, mainCam.transform.position, out hit, mask))
         {
-            if (Vector3.Distance(mainCam.transform.position, farPoint) <
-                Vector3.Distance(mainCam.transform.position, p.point))
-                farPoint = p.point;
+            colliding = true;
+            mainCam.transform.position = hit.point;
         }
-        Debug.Log(farPoint);
-        Debug.DrawRay(farPoint, Vector3.up, Color.blue, 5.0f);
+        else
+            colliding = false;
+
+        while (cliping)
+        {
+
+            // left direction and position to the viewport
+            //bottom
+            leftBViewPortPos = mainCam.ViewportToWorldPoint(new Vector3(0.0f, 0.0f, mainCam.nearClipPlane));
+            //top
+            leftTViewPortPos = mainCam.ViewportToWorldPoint(new Vector3(0.0f, 1.0f, mainCam.nearClipPlane));
+
+            // right direction and position to the viewport
+            //bottom
+            rightBViewPortPos = mainCam.ViewportToWorldPoint(new Vector3(1.0f, 0.0f, mainCam.nearClipPlane));
+            //top
+            rightTViewPortPos = mainCam.ViewportToWorldPoint(new Vector3(1.0f, 1.0f, mainCam.nearClipPlane));
+
+            //collision
+            Debug.DrawLine(mainCam.transform.position, leftBViewPortPos, Color.blue);   //leftB
+            Debug.DrawLine(mainCam.transform.position, rightBViewPortPos, Color.blue);   //rightB
+            Debug.DrawLine(mainCam.transform.position, leftTViewPortPos, Color.blue);    //leftT
+            Debug.DrawLine(mainCam.transform.position, rightTViewPortPos, Color.blue);   //rightT
+
+            if (Physics.Linecast(mainCam.transform.position, leftBViewPortPos) || Physics.Linecast(mainCam.transform.position, rightBViewPortPos) ||
+                Physics.Linecast(mainCam.transform.position, leftTViewPortPos) || Physics.Linecast(mainCam.transform.position, rightTViewPortPos))
+            {
+                mainCam.transform.position += mainCam.transform.forward * (mainCam.nearClipPlane +  0.2f);
+                whileCount++;
+                if (whileCount > 1)
+                    camTarget.localPosition = new Vector3(0.0f, camTarget.localPosition.y, camTarget.localPosition.z);
+            }
+            else
+            {
+                cliping = false;
+                mainCam.transform.LookAt(camTarget);
+                whileCount = 0;
+            }
+        }
+    }
+
+    //camera rotation debug
+    private void camDebug()
+    {
+        //rotation
+        Debug.DrawRay(objToFollow.transform.position, -objToFollow.transform.forward, Color.red);
+        Debug.DrawRay(objToFollow.transform.position, camPositionVec, Color.green);
+
+
     }
 }

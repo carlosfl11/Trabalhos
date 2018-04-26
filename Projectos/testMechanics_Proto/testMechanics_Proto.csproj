@@ -259,6 +259,12 @@
     <Reference Include="UnityEditor.iOS.Extensions">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.WSA.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.WSA.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WebGL.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.WebGL.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>Library\UnityAssemblies\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
@@ -295,6 +301,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_scripts\cameraController.cs" />
+    <Compile Include="Assets\_scripts\door.cs" />
+    <Compile Include="Assets\_scripts\enemyCtrl.cs" />
+    <Compile Include="Assets\_scripts\fightDetect.cs" />
+    <Compile Include="Assets\_scripts\gameCharCtrl.cs" />
+    <Compile Include="Assets\_scripts\interactable.cs" />
+    <Compile Include="Assets\_scripts\interactDetect.cs" />
     <Compile Include="Assets\_scripts\playerMove.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
