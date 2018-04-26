@@ -46,6 +46,14 @@ public class gameCharCtrl : MonoBehaviour
             anim.avatar = douglasInfAvatar;
             anim.runtimeAnimatorController = douglasInfCtrl;
         }
+        if (!isInfected)
+        {
+            anim.avatar = douglasAvatar;
+            anim.runtimeAnimatorController = douglasCtrl;
+
+            douglas.SetActive(true);
+            douglasInf.SetActive(false);
+        }
 
     }
 
@@ -53,5 +61,14 @@ public class gameCharCtrl : MonoBehaviour
     public bool getInfState()
     {
         return isInfected;
+    }
+
+    public void switchChars()
+    {
+        if (isInfected)
+            isInfected = false;
+        else
+            isInfected = true;
+                
     }
 }

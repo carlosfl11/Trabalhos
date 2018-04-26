@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,11 +11,6 @@ public class interactable : MonoBehaviour {
 
     //trigger the object action
     private bool didTakeAction = false;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -27,9 +23,12 @@ public class interactable : MonoBehaviour {
                 case obj.ball:
                     Debug.Log("ball take action");
                     Destroy(this.gameObject);
+                    didTakeAction = false;
                     break;
                 case obj.door:
+                    this.GetComponent<door>().actionDoor();
                     Debug.Log("door take action");
+                    didTakeAction = false;
                     break;
             }
         }

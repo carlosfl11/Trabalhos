@@ -38,13 +38,15 @@ public class interactDetect : MonoBehaviour
             actionEnded = true;
 
         // do action
-        if (actionStarted && actionEnded)
+        if (actionStarted && actionEnded && other.tag == "interactable")
         {
             other.GetComponent<interactable>().actionDone();
+
             // reset values
             actionStarted = false;
             actionEnded = false;
             plMove.setInteract = false;
+
         }
     }
 }

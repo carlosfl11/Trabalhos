@@ -301,6 +301,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_scripts\cameraController.cs" />
+    <Compile Include="Assets\_scripts\door.cs" />
+    <Compile Include="Assets\_scripts\enemyCtrl.cs" />
+    <Compile Include="Assets\_scripts\fightDetect.cs" />
     <Compile Include="Assets\_scripts\gameCharCtrl.cs" />
     <Compile Include="Assets\_scripts\interactable.cs" />
     <Compile Include="Assets\_scripts\interactDetect.cs" />
