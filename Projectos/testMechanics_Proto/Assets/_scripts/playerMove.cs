@@ -253,7 +253,7 @@ public class playerMove : MonoBehaviour
     private void fighting()
     {
         //has to be on infected char
-        if (controller.getInfState() && cc.isGrounded && !playerAnim.GetBool("jump"))
+        if (controller.getInfState() && cc.isGrounded && !playerAnim.GetBool("jump") && playerAnim.GetFloat("turn") == 0.0f)
         {
             //left mouse 
             if (Input.GetAxis("Fire1") > 0.0f)

@@ -69,7 +69,7 @@ public class cameraController : MonoBehaviour
         //smoth ajust camPosition
         camAjust();
         // test if collides
-        //camColl();
+        camColl();
 
 
         //Debug

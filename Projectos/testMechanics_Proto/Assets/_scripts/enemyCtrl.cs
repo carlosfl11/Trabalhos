@@ -14,15 +14,16 @@ public class enemyCtrl : MonoBehaviour
 
     private NavMeshAgent agent;
     private NavMeshPath path;
+    private float force = 0.0f;
 
     //idle/ follow / attack
     private bool isIdle, isFollowing, isAttacking;
+    private float attackTimer = 0.0f;
 
     // Use this for initialization
     void Start()
     {
         player = GameObject.Find("player");
-        rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
         path = new NavMeshPath();
 
@@ -54,7 +55,13 @@ public class enemyCtrl : MonoBehaviour
                 agent.isStopped = true;
             }
 
+            agent.Move(-transform.forward * force * Time.deltaTime);
+            force -= force * Time.deltaTime;
+            if (force < 0)
+                force = 0.0f;
+
             follow();
+            attack();
             //Debug.Log(hp);
         }
     }
@@ -62,7 +69,7 @@ public class enemyCtrl : MonoBehaviour
     public void takeDMG(float amount)
     {
         hp -= amount;
-        rb.AddForce(player.transform.forward * 300.0f + Vector3.up * 100.0f);
+        force = 25.0f;
     }
 
     //moving
@@ -78,9 +85,26 @@ public class enemyCtrl : MonoBehaviour
             if (agent.remainingDistance < 2.0f)
             {
                 agent.isStopped = true;
-                Debug.Log("attack");
+                isFollowing = false;
+                isAttacking = true;
             }
         }
-        
+
+    }
+
+    //atack
+    private void attack()
+    {
+        if (isAttacking)
+        {
+            if (attackTimer > 2.0f)
+            {
+                Debug.Log("attack");
+                attackTimer = 0.0f;
+            }
+            else
+                attackTimer += Time.deltaTime;
+            Debug.Log(attackTimer);
+        }
     }
 }
