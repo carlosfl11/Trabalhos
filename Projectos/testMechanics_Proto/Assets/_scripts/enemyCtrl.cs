@@ -8,6 +8,7 @@ public class enemyCtrl : MonoBehaviour
     //get player
     private GameObject player;
     private Rigidbody rb;
+    private Vector3 playerDir;
 
     //sethp
     private float hp = 100.0f;
@@ -55,14 +56,13 @@ public class enemyCtrl : MonoBehaviour
                 agent.isStopped = true;
             }
 
-            agent.Move(-transform.forward * force * Time.deltaTime);
+            agent.Move(playerDir * force * Time.deltaTime);
             force -= force * Time.deltaTime;
             if (force < 0)
                 force = 0.0f;
 
             follow();
             attack();
-            //Debug.Log(hp);
         }
     }
 
@@ -70,6 +70,7 @@ public class enemyCtrl : MonoBehaviour
     {
         hp -= amount;
         force = 25.0f;
+        playerDir = transform.position - player.transform.position;
     }
 
     //moving
@@ -82,7 +83,7 @@ public class enemyCtrl : MonoBehaviour
             {
                 agent.SetDestination(player.transform.position);
             }
-            if (agent.remainingDistance < 2.0f)
+            if (agent.remainingDistance < 1.5f)
             {
                 agent.isStopped = true;
                 isFollowing = false;
@@ -98,13 +99,9 @@ public class enemyCtrl : MonoBehaviour
         if (isAttacking)
         {
             if (attackTimer > 2.0f)
-            {
-                Debug.Log("attack");
                 attackTimer = 0.0f;
-            }
             else
                 attackTimer += Time.deltaTime;
-            Debug.Log(attackTimer);
         }
     }
 }

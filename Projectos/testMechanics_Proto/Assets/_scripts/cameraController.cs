@@ -177,47 +177,10 @@ public class cameraController : MonoBehaviour
         if (Physics.Linecast(camTarget.position, mainCam.transform.position, out hit, mask))
         {
             colliding = true;
-            mainCam.transform.position = hit.point;
+            mainCam.transform.position = hit.point + mainCam.transform.forward;
         }
         else
             colliding = false;
-
-        while (cliping)
-        {
-
-            // left direction and position to the viewport
-            //bottom
-            leftBViewPortPos = mainCam.ViewportToWorldPoint(new Vector3(0.0f, 0.0f, mainCam.nearClipPlane));
-            //top
-            leftTViewPortPos = mainCam.ViewportToWorldPoint(new Vector3(0.0f, 1.0f, mainCam.nearClipPlane));
-
-            // right direction and position to the viewport
-            //bottom
-            rightBViewPortPos = mainCam.ViewportToWorldPoint(new Vector3(1.0f, 0.0f, mainCam.nearClipPlane));
-            //top
-            rightTViewPortPos = mainCam.ViewportToWorldPoint(new Vector3(1.0f, 1.0f, mainCam.nearClipPlane));
-
-            //collision
-            Debug.DrawLine(mainCam.transform.position, leftBViewPortPos, Color.blue);   //leftB
-            Debug.DrawLine(mainCam.transform.position, rightBViewPortPos, Color.blue);   //rightB
-            Debug.DrawLine(mainCam.transform.position, leftTViewPortPos, Color.blue);    //leftT
-            Debug.DrawLine(mainCam.transform.position, rightTViewPortPos, Color.blue);   //rightT
-
-            if (Physics.Linecast(mainCam.transform.position, leftBViewPortPos) || Physics.Linecast(mainCam.transform.position, rightBViewPortPos) ||
-                Physics.Linecast(mainCam.transform.position, leftTViewPortPos) || Physics.Linecast(mainCam.transform.position, rightTViewPortPos))
-            {
-                mainCam.transform.position += mainCam.transform.forward * (mainCam.nearClipPlane +  0.2f);
-                whileCount++;
-                if (whileCount > 1)
-                    camTarget.localPosition = new Vector3(0.0f, camTarget.localPosition.y, camTarget.localPosition.z);
-            }
-            else
-            {
-                cliping = false;
-                mainCam.transform.LookAt(camTarget);
-                whileCount = 0;
-            }
-        }
     }
 
     //camera rotation debug
