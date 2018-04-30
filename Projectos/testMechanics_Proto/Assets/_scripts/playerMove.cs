@@ -68,9 +68,7 @@ public class playerMove : MonoBehaviour
 
     private void Movement()
     {
-
         //if w  is pressed
-
         if (Input.GetAxis("Vertical") > 0)
         {
             playerAnim.SetBool("moving", true);
@@ -273,6 +271,7 @@ public class playerMove : MonoBehaviour
                 else
                 {
                     giveHit = false;
+                    hitTimer = 0.0f;
                 }
             }
             //right mouse
@@ -291,6 +290,8 @@ public class playerMove : MonoBehaviour
             //set animator parameters
             playerAnim.SetBool("block", isBlocking);
             playerAnim.SetBool("attack", isAttacking);
+            Debug.Log(hitTimer);
+
         }
     }
 
