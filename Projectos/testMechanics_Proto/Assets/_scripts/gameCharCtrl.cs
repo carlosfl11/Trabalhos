@@ -18,6 +18,7 @@ public class gameCharCtrl : MonoBehaviour
 
     //controllers
     public RuntimeAnimatorController douglasCtrl, douglasInfCtrl;
+    private GameObject fightTrigger;
 
     private bool isInfected = false;
 
@@ -26,12 +27,14 @@ public class gameCharCtrl : MonoBehaviour
     void Start()
     {
         anim = player.GetComponent<Animator>();
+        fightTrigger = GameObject.Find("fightTrigger");
 
         anim.avatar = douglasAvatar;
         anim.runtimeAnimatorController = douglasCtrl;
 
         douglas.SetActive(true);
         douglasInf.SetActive(false);
+        fightTrigger.SetActive(false);
     }
 
     // Update is called once per frame
@@ -45,6 +48,8 @@ public class gameCharCtrl : MonoBehaviour
 
             anim.avatar = douglasInfAvatar;
             anim.runtimeAnimatorController = douglasInfCtrl;
+
+            fightTrigger.SetActive(true);
         }
         if (!isInfected)
         {
@@ -53,6 +58,7 @@ public class gameCharCtrl : MonoBehaviour
 
             douglas.SetActive(true);
             douglasInf.SetActive(false);
+            fightTrigger.SetActive(false);
         }
 
     }

@@ -83,7 +83,7 @@ public class enemyCtrl : MonoBehaviour
             {
                 agent.SetDestination(player.transform.position);
             }
-            if (agent.remainingDistance < 1.5f)
+            if (agent.remainingDistance < 1.2f)
             {
                 agent.isStopped = true;
                 isFollowing = false;

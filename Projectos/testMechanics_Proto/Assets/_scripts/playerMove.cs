@@ -43,6 +43,7 @@ public class playerMove : MonoBehaviour
         cc = GetComponent<CharacterController>();
         playerAnim.applyRootMotion = true;
         controller = GameObject.Find("gameCharCtrl").GetComponent<gameCharCtrl>();
+        
     }
 
     // Update is called once per frame
@@ -259,19 +260,25 @@ public class playerMove : MonoBehaviour
                 isAttacking = true;
                 isBlocking = false;
 
-                if (canHit)
+                hitTimer += Time.deltaTime;
+
+                if(hitTimer > 1.2f)
                 {
-                    hitTimer += Time.deltaTime;
-                    if (hitTimer > 1.0f)
+                    if (canHit)
                     {
                         giveHit = true;
                         hitTimer = 0.0f;
+                    }
+                    else
+                    {
+                        giveHit = false;
+                        hitTimer = 0.0f;
+                        isAttacking = false;
                     }
                 }
                 else
                 {
                     giveHit = false;
-                    hitTimer = 0.0f;
                 }
             }
             //right mouse
