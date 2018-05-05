@@ -262,7 +262,7 @@ public class playerMove : MonoBehaviour
 
                 hitTimer += Time.deltaTime;
 
-                if(hitTimer > 1.2f)
+                if(hitTimer > 0.9f)
                 {
                     if (canHit)
                     {
@@ -309,12 +309,16 @@ public class playerMove : MonoBehaviour
     }
 
     // retur action
-    public bool getActionState { get { return (action); } }
+    public bool getActionState
+    { get { return (action); } }
 
 
     //fighting
-    public bool setCanHit { set { canHit = value; } }
-    public bool hit { get { return (giveHit); } }
+    public bool setCanHit
+    { set { canHit = value; } }
+
+    public bool hit
+    { get { return (giveHit); } }
 
     //take damage
     public void takeDamage(float amount)
