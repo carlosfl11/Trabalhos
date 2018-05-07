@@ -21,6 +21,9 @@ public class enemyCtrl : MonoBehaviour
     private bool isIdle, isFollowing, isAttacking;
     private float attackTimer = 0.0f;
 
+    //Ragdoll
+    private bool isRagdollDisable = true;
+
     // Use this for initialization
     void Start()
     {
@@ -32,13 +35,19 @@ public class enemyCtrl : MonoBehaviour
         isIdle = true;
         isFollowing = false;
         isAttacking = false;
+
+        Ragdoll();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (hp <= 0.0f)
-            Destroy(this.gameObject);
+        {
+            isRagdollDisable = false;
+            Ragdoll();
+
+        }
         if (hp > 0)
         {
             // check for distance with target
@@ -103,5 +112,11 @@ public class enemyCtrl : MonoBehaviour
             else
                 attackTimer += Time.deltaTime;
         }
+    }
+
+    private void Ragdoll()
+    {
+        Rigidbody[] ragDollRb = GetComponentsInChildren<Rigidbody>();
+        foreach (Rigidbody r in ragDollRb) { r.isKinematic = isRagdollDisable; }
     }
 }

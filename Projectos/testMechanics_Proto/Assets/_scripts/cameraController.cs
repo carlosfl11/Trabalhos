@@ -116,16 +116,27 @@ public class cameraController : MonoBehaviour
 
 
         // test the angle between old camPostion and the target one, smooth transition
-        if (Vector3.Angle(targetRotationVec, -mainCam.transform.forward) > 0.5f &&
-            Vector3.Angle(targetRotationVec, -mainCam.transform.forward) <= 30.0f)
+        //if (Vector3.Angle(targetRotationVec, -mainCam.transform.forward) > 0.5f &&
+        //    Vector3.Angle(targetRotationVec, -mainCam.transform.forward) <= 30.0f)
+        //{
+        //    //if camera need to rotate right
+        //    if (Vector3.Cross(targetRotationVec, -mainCam.transform.forward).y > 0.0f)
+        //        camPositionVec = Quaternion.AngleAxis(-anglePerSec * Time.deltaTime, mainCam.transform.up) * camPositionVec;
+        //    //if camera need to rotate left
+        //    else if (Vector3.Cross(targetRotationVec, -mainCam.transform.forward).y < 0.0f)
+        //        camPositionVec = Quaternion.AngleAxis(anglePerSec * Time.deltaTime, mainCam.transform.up) * camPositionVec;
+
+        //}
+        if (Vector3.Angle(targetRotationVec, -mainCam.transform.forward) <= 30.0f)
         {
+            if (Vector3.Angle(targetRotationVec, -mainCam.transform.forward) <= 2.0f)
+                camPositionVec = targetRotationVec;
             //if camera need to rotate right
-            if (Vector3.Cross(targetRotationVec, -mainCam.transform.forward).y > 0.0f)
+            else if (Vector3.Cross(targetRotationVec, -mainCam.transform.forward).y > 0.0f)
                 camPositionVec = Quaternion.AngleAxis(-anglePerSec * Time.deltaTime, mainCam.transform.up) * camPositionVec;
             //if camera need to rotate left
             else if (Vector3.Cross(targetRotationVec, -mainCam.transform.forward).y < 0.0f)
                 camPositionVec = Quaternion.AngleAxis(anglePerSec * Time.deltaTime, mainCam.transform.up) * camPositionVec;
-
         }
 
         //limit max angle offset to 30º
@@ -170,7 +181,6 @@ public class cameraController : MonoBehaviour
     private void camColl()
     {
         LayerMask mask = ~(1 << 8);
-        bool cliping = true;
         RaycastHit hit;
 
 

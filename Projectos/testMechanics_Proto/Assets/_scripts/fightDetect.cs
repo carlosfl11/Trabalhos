@@ -36,7 +36,7 @@ public class fightDetect : MonoBehaviour
         //in range and player time for hit 
         if (other.tag == "enemy" && plMove.hit)
         {
-            other.GetComponentInParent<enemyCtrl>().takeDMG(25.0f);
+            other.GetComponentInParent<enemyCtrl>().takeDMG(50.0f);
             plMove.setCanHit = false;
         }
         else if (other.tag == "enemy")

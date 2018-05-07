@@ -273,7 +273,7 @@ public class playerMove : MonoBehaviour
                     {
                         giveHit = false;
                         hitTimer = 0.0f;
-                        isAttacking = false;
+                        //isAttacking = false;
                     }
                 }
                 else
