@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 4585d9ea88213624988da40772f156f2
-timeCreated: 1524689035
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -147,6 +145,7 @@ ModelImporter:
     400138: Spine2
     7400000: douglasInf@zombieTurn
     9500000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 0
@@ -169,6 +168,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5

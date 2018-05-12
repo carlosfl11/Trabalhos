@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testMechanics_Proto", "testMechanics_Proto.csproj", "{9CD657E3-DE76-5536-4315-528B940C81AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testMechanics_Proto", "Assembly-CSharp.csproj", "{AADF1C62-580C-F697-CBAA-68A197F74F88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9CD657E3-DE76-5536-4315-528B940C81AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9CD657E3-DE76-5536-4315-528B940C81AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9CD657E3-DE76-5536-4315-528B940C81AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9CD657E3-DE76-5536-4315-528B940C81AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AADF1C62-580C-F697-CBAA-68A197F74F88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AADF1C62-580C-F697-CBAA-68A197F74F88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AADF1C62-580C-F697-CBAA-68A197F74F88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AADF1C62-580C-F697-CBAA-68A197F74F88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
