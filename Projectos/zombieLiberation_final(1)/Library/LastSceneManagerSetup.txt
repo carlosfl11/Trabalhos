@@ -1,0 +1,16 @@
+sceneSetups:
+- path: Assets/Scenes/mainScene.unity
+  isLoaded: 1
+  isActive: 1
+- path: Assets/Scenes/_terrainFragScenes/terrainFragScene01.unity
+  isLoaded: 1
+  isActive: 0
+- path: Assets/Scenes/_terrainFragScenes/terrainFragScene02.unity
+  isLoaded: 1
+  isActive: 0
+- path: Assets/Scenes/_terrainFragScenes/terrainFragScene03.unity
+  isLoaded: 1
+  isActive: 0
+- path: Assets/Scenes/_terrainFragScenes/terrainFragScene21.unity
+  isLoaded: 1
+  isActive: 0

@@ -1,0 +1,568 @@
+Base path: D:/Program Files/Unity/Editor/Data
+Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  api=4 insize=5188 outsize=4077 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=2444 outsize=2505 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=9421 outsize=8717 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=9421 outsize=8853 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=1864 outsize=537 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=1505 outsize=1437 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  api=4 insize=1522 outsize=16081 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=4705 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=5785 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=6793 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=5905 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=6985 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=6477 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=7461 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=8973 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=6781 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=7765 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=9277 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=6157 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=6541 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=7237 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=8245 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=7045 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=8053 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=8825 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=8933 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=10445 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=8253 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=9237 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=15322 outsize=10749 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at lightlistbuild-clustered.compute(9): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=19973 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at DepthPyramid.compute(1): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=1836 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at lightlistbuild.compute(11): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=16785 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=4 insize=30861 outsize=209 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at materialflags.compute(6): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=2783 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at DeferredDirectionalShadow.compute(19): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=6056 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at lightlistbuild-clustered.compute(9): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=19973 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at lightlistbuild-clustered.compute(9): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=19973 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at lightlistbuild-clustered.compute(9): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=19973 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=4 insize=2134 outsize=341 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ApplyDistorsion.compute(1): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=2507 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=4 insize=7524 outsize=9809 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=5188 outsize=5373 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ColorPyramid.compute(22): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=5469 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at lightlistbuild-bigtile.compute(3): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=9894 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=4 insize=9421 outsize=8717 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at DepthPyramid.compute(1): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=1836 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at lightlistbuild.compute(11): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=16785 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=4 insize=5591 outsize=6421 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at scrbound.compute(6): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=17061 outsize=0 ok=0
+Cmd: compileComputeKernel
+  api=4 insize=30861 outsize=217 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at EncodeBC6H.compute(1): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=1522 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at SubsurfaceScattering.compute(40): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=19712 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at BuildProbabilityTables.compute(7): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=7569 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at materialflags.compute(6): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=2783 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at materialflags.compute(6): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=2783 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at DeferredDirectionalShadow.compute(19): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=6056 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at DeferredDirectionalShadow.compute(19): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=6056 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at Deferred.compute(77): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=13402 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at lightlistbuild-clustered.compute(9): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=19973 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at lightlistbuild.compute(11): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=16785 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at EncodeBC6H.compute(1): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=1522 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ShadowBlurMoments.compute(80): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=15322 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at materialflags.compute(6): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=2783 outsize=0 ok=0
+Cmd: compileComputeKernel
+  error: 2 plat 4 at DeferredDirectionalShadow.compute(19): failed to open source file: 'CoreRP/ShaderLibrary/Common.hlsl'
+  api=4 insize=6056 outsize=0 ok=0
+Cmd: initializeCompiler
+Cmd: initializeCompiler
+Cmd: compileComputeKernel
+  api=4 insize=13402 outsize=67197 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13402 outsize=16717 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13402 outsize=26873 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13402 outsize=41621 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13402 outsize=19337 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13402 outsize=25933 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13402 outsize=35125 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13402 outsize=29077 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13402 outsize=68305 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13402 outsize=29829 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13402 outsize=45125 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13402 outsize=29737 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=13402 outsize=69209 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=19973 outsize=13877 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=19973 outsize=15317 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=2507 outsize=1329 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=9894 outsize=9589 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=1836 outsize=645 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=16785 outsize=13589 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=30861 outsize=209 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=19712 outsize=92421 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6056 outsize=12057 ok=1
